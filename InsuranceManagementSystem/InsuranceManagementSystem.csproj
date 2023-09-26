@@ -71,6 +71,7 @@
     <Content Include="Agent\AddPolicy.aspx" />
     <Content Include="Agent\AgentHome.aspx" />
     <Content Include="Agent\DeletePolicy.aspx" />
+    <Content Include="Agent\ViewAllInsurers.aspx" />
     <Content Include="Agent\ViewAllPolicies.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -226,6 +227,13 @@
     </Compile>
     <Compile Include="Agent\DeletePolicy.aspx.designer.cs">
       <DependentUpon>DeletePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agent\ViewAllInsurers.aspx.cs">
+      <DependentUpon>ViewAllInsurers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agent\ViewAllInsurers.aspx.designer.cs">
+      <DependentUpon>ViewAllInsurers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Agent\ViewAllPolicies.aspx.cs">
       <DependentUpon>ViewAllPolicies.aspx</DependentUpon>

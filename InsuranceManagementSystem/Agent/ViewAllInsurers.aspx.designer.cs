@@ -11,7 +11,7 @@ namespace InsuranceManagementSystem.Agent
 {
 
 
-    public partial class ViewAllPolicies
+    public partial class ViewAllInsurers
     {
 
         /// <summary>
