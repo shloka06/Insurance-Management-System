@@ -79,7 +79,8 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewInsurer.aspx" class="active"><i class="fas fa-solid fa-user pr-1"></i></i>View Insurer Details</a></li>
+                                <li><a href="../Agent/ViewAllInsurers.aspx" class="active"><i class="fas fa-solid fa-user-group pr-1"></i></i>View All Insurers</a></li>
+                                <li><a href="../Agent/ViewInsurerDetails.aspx" class="active"><i class="fas fa-solid fa-user pr-1"></i></i>View Insurer Details</a></li>
                                 <li><a href="../Agent/AddInsurer.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Insurer</a></li>
                                 <li><a href="../Agent/AddInsurerPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1"></i>Add Policy for Insurer</a></li>
                             </ul>
