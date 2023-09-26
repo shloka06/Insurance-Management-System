@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AgentMst.master.cs" Inherits="InsuranceManagementSystem.Agent.AgentMst" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Insurance Management System</title>
+    <meta charset="UTF-8">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/6eddbb9610.js" crossorigin="anonymous"></script>
+        <link href="../Content/styles.css" rel="stylesheet" />
+    
+    <script src="../Scripts/jquery-3.7.0.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $(".siderbar_menu li").click(function () {
+                    $(".siderbar_menu li").removeClass("active");
+                    $(this).addClass("active");
+                });
+
+                $(".hamburger").click(function () {
+                    $(".wrapper").addClass("active");
+                });
+
+                $(".close, .bg_shadow").click(function () {
+                    $(".wrapper").removeClass("active");
+                });
+            });
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <div class="wrapper">
+            <div class="sidebar">
+                <div class="bg_shadow"></div>
+                <div class="sidebar_inner">
+                    <div class="close">
+                        <i class="fas fa-times"></i>
+                    </div>
+
+                    <div class="profile_info">
+                        <div class="profile_img">
+                            <img src="../Images/AgentIcon.png" alt="profile_img">
+                        </div>
+                        <div class="profile_data">
+                            <p class="name">Agent Module</p>
+                            <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+                        </div>
+                    </div>
+
+                    <ul class="siderbar_menu">
+                        <li>
+                            <a href="../Agent/AgentHome.aspx">
+                                <div class="icon"><i class="fas fa-home"></i></div>
+                                <div class="title">Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-folder-open"></i></div>
+                                <div class="title">Policies</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Agent/ViewAllPolicies.aspx" class="active"><i class="fas fa-solid fa-list pr-1"></i></i>View All Policies</a></li>
+                                <li><a href="../Agent/AddPolicy.aspx" class="active"><i class="fas fa-plus pr-1"></i>Add Policy</a></li>
+                                <li><a href="../Agent/DeletePolicy.aspx" class="active"><i class="fas fa-minus fa-xmark pr-1"></i>Delete Policy</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-user"></i></div>
+                                <div class="title">Insurers</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Agent/ViewInsurer.aspx" class="active"><i class="fas fa-solid fa-user pr-1"></i></i>View Insurer Details</a></li>
+                                <li><a href="../Agent/AddInsurer.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Insurer</a></li>
+                                <li><a href="../Agent/AddInsurerPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1"></i>Add Policy for Insurer</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-person"></i></div>
+                                <div class="title">Beneficiaries</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Agent/ViewBeneficiary.aspx" class="active"><i class="fas fa-person pr-1"></i></i>View Beneficiary Details</a></li>
+                                <li><a href="../Agent/AddBeneficiary.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Beneficiary</a></li>
+                                <li><a href="../Agent/DeleteBeneficiary.aspx" class="active"><i class="fas fa-person-circle-minus pr-1"></i>Delete Beneficiary</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-credit-card"></i></div>
+                                <div class="title">Payments</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Agent/ViewPaymentRequests.aspx" class="active"><i class="fas fa-solid fa-money-bill-wave pr-1"></i>View Pending Payment Requests</a></li>
+                                <li><a href="../Agent/ViewUpcomingPayments.aspx" class="active"><i class="fas fa-solid fa-file-invoice pr-1"></i>View Upcomping Payments</a></li>
+                                <li><a href="../Agent/AddPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1"></i>View Payment History</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                                <div class="title">Claims</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Agent/ViewClaimRequests.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1"></i>View Pending Claims Requests</a></li>
+                                <li><a href="../Agent/AddClaimsHistory.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>View Claims History</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="logout_btn">
+                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false">Logout</asp:LinkButton>
+                    </div>
+
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="navbar">
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="logo">
+                        <a href="#">Guardian Life Insurance</a>
+                    </div>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
