@@ -92,9 +92,7 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewBeneficiary.aspx" class="active"><i class="fas fa-person pr-1"></i></i>View Benefactor Details</a></li>
-                                <li><a href="../Agent/AddBeneficiary.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Benefactor</a></li>
-                                <li><a href="../Agent/DeleteBeneficiary.aspx" class="active"><i class="fas fa-person-circle-minus pr-1"></i>Delete Benefactor</a></li>
+                                <li><a href="../Agent/AddBenefactor.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Benefactor</a></li>
                             </ul>
                         </li>
                         <li>
@@ -106,7 +104,7 @@
                             <ul class="accordion">
                                 <li><a href="../Agent/ViewPaymentRequests.aspx" class="active"><i class="fas fa-solid fa-money-bill-wave pr-1"></i>View Pending Payment Requests</a></li>
                                 <li><a href="../Agent/ViewUpcomingPayments.aspx" class="active"><i class="fas fa-solid fa-file-invoice pr-1"></i>View Upcomping Payments</a></li>
-                                <li><a href="../Agent/AddPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1"></i>View Payment History</a></li>
+                                <li><a href="../Agent/ViewPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1"></i>View Payment History</a></li>
                             </ul>
                         </li>
                         <li>

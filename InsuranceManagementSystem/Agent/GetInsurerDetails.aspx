@@ -57,6 +57,15 @@
 
         <div class="row mb-3 mr-lg-5 ml-lg-5">
             <div class="col-md-6">
+                <label for="PhoneNumGridView" style="font-size: 20px; font-weight: 600">Phone Numbers:
+                </label>
+                <asp:GridView ID="PhoneNumGridView" runat="server" CssClass="table table-hover table-bordered">
+                </asp:GridView>
+            </div>
+        </div>
+
+        <div class="row mb-3 mr-lg-5 ml-lg-5">
+            <div class="col-md-6">
                 <label for="BenefactorGridView" style="font-size: 20px; font-weight: 600">Benefactors: </label>
                 <asp:GridView ID="BenefactorGridView" runat="server" CssClass="table table-hover table-bordered"></asp:GridView>
             </div>
