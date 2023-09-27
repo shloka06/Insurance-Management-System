@@ -80,7 +80,7 @@
                             </a>
                             <ul class="accordion">
                                 <li><a href="../Agent/ViewAllInsurers.aspx" class="active"><i class="fas fa-solid fa-user-group pr-1"></i></i>View All Insurers</a></li>
-                                <li><a href="../Agent/ViewInsurerDetails.aspx" class="active"><i class="fas fa-solid fa-user pr-1"></i></i>View Insurer Details</a></li>
+                                <li><a href="../Agent/GetInsurerDetails.aspx" class="active"><i class="fas fa-solid fa-user pr-1"></i></i>Get Insurer Details</a></li>
                                 <li><a href="../Agent/AddInsurer.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Insurer</a></li>
                                 <li><a href="../Agent/AddInsurerPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1"></i>Add Policy for Insurer</a></li>
                             </ul>
@@ -88,13 +88,13 @@
                         <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-person"></i></div>
-                                <div class="title">Beneficiaries</div>
+                                <div class="title">Benefactors</div>
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewBeneficiary.aspx" class="active"><i class="fas fa-person pr-1"></i></i>View Beneficiary Details</a></li>
-                                <li><a href="../Agent/AddBeneficiary.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Beneficiary</a></li>
-                                <li><a href="../Agent/DeleteBeneficiary.aspx" class="active"><i class="fas fa-person-circle-minus pr-1"></i>Delete Beneficiary</a></li>
+                                <li><a href="../Agent/ViewBeneficiary.aspx" class="active"><i class="fas fa-person pr-1"></i></i>View Benefactor Details</a></li>
+                                <li><a href="../Agent/AddBeneficiary.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Benefactor</a></li>
+                                <li><a href="../Agent/DeleteBeneficiary.aspx" class="active"><i class="fas fa-person-circle-minus pr-1"></i>Delete Benefactor</a></li>
                             </ul>
                         </li>
                         <li>
