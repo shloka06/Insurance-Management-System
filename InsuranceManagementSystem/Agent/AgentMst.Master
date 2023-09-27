@@ -103,7 +103,7 @@
                             </a>
                             <ul class="accordion">
                                 <li><a href="../Agent/ViewPaymentRequests.aspx" class="active"><i class="fas fa-solid fa-money-bill-wave pr-1"></i>View Pending Payment Requests</a></li>
-                                <li><a href="../Agent/ViewUpcomingPayments.aspx" class="active"><i class="fas fa-solid fa-file-invoice pr-1"></i>View Upcomping Payments</a></li>
+                                <li><a href="../Agent/ApprovePaymentRequests.aspx" class="active"><i class="fas fa-solid fa-check pr-1"></i>Approve Pending Payment Requests</a></li>
                                 <li><a href="../Agent/ViewPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1"></i>View Payment History</a></li>
                             </ul>
                         </li>
