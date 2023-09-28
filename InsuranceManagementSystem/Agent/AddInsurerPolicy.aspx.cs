@@ -17,41 +17,46 @@ namespace InsuranceManagementSystem.Agent
             try
             {
                 int insID = Convert.ToInt32(txtInsID.Text.Trim());
-                int polID = Convert.ToInt32(txtBenID.Text.Trim());
-                int benID = Convert.ToInt32(txtPolID.Text.Trim());
+                int polID = Convert.ToInt32(txtPolID.Text.Trim());
+                int benID = Convert.ToInt32(txtBenID.Text.Trim());
 
                 DataTable insDT = fn.Fetch("Select * from INSURER where INS_ID = " + insID + ";");
                 DataTable polDT = fn.Fetch("Select * from POLICY where POL_ID = " + polID + ";");
                 DataTable benDT = fn.Fetch("Select * from BENEFACTOR where B_ID = " + benID + ";");
-                DataTable insBenDT = fn.Fetch("Select * from INSURER_BENEFACTOR where INS_ID = " + insID + " and POL_ID = " + polID + ";");
+                DataTable insBenDT = fn.Fetch("Select * from INSURER_BENEFACTOR where INS_ID = " + insID + " and B_ID = " + benID + ";");
                 DataTable insPolBenDT = fn.Fetch("Select * from PURCHASED_POLICY_BENEFACTOR where INS_ID = " + insID + " AND POL_ID = " + polID + "AND B_ID = " + benID + ";");
 
                 if (insDT.Rows.Count == 0)
                 {
+                    lblMsg.Visible = true;
                     lblMsg.Text = "No Insurer Record Found for Entered ID!";
                     lblMsg.CssClass = "alert alert-danger";
                     return;
                 }
                 else if (polDT.Rows.Count == 0)
                 {
+                    lblMsg.Visible = true;
                     lblMsg.Text = "No Policy Record Found for Entered ID!";
                     lblMsg.CssClass = "alert alert-danger";
                     return;
                 }
                 else if (benDT.Rows.Count == 0)
                 {
+                    lblMsg.Visible = true;
                     lblMsg.Text = "No Benefactor Record Found for Entered ID!";
                     lblMsg.CssClass = "alert alert-danger";
                     return;
                 }
                 else if (insBenDT.Rows.Count == 0)
                 {
+                    lblMsg.Visible = true;
                     lblMsg.Text = "No Benefactor Record Found for Entered Insurer ID!";
                     lblMsg.CssClass = "alert alert-danger";
                     return;
                 }
                 else if (insPolBenDT.Rows.Count != 0)
                 {
+                    lblMsg.Visible = true;
                     lblMsg.Text = "Policy Already Exists For Insurer!";
                     lblMsg.CssClass = "alert alert-danger";
                     return;
@@ -67,18 +72,41 @@ namespace InsuranceManagementSystem.Agent
                     string strEndDate = endYear.ToString() + "-" + startMonth + "-" + startDay;
                     string strStartDate = startYear.ToString() + "-" + startMonth + "-" + startDay;
 
-                    string insertPurchasedPolicyQuery = "INSERT INTO PURCHASED_POLICY(INS_ID, POL_ID, Poliy_Status, Start_Date, End_Date) VALUES (" + insID + ", " + polID + ", 'Ongoing', '" + strStartDate + "', '" + strEndDate + "');";
+                    string insertPurchasedPolicyQuery = "INSERT INTO PURCHASED_POLICY(INS_ID, POL_ID, Policy_Status, Start_Date, End_Date) VALUES (" + insID + ", " + polID + ", 'Ongoing', '" + strStartDate + "', '" + strEndDate + "');";
 
                     string insertPurchasedPolicyBenefactorQuery = "INSERT INTO PURCHASED_POLICY_BENEFACTOR(INS_ID, POL_ID, B_ID) VALUES (" + insID +", " + polID + ", " + benID + ");";
 
                     fn.Query(insertPurchasedPolicyQuery);
                     fn.Query(insertPurchasedPolicyBenefactorQuery);
+
+                    lblMsg.Visible = true;
                     lblMsg.Text = "Policy Successfully Added For Insurer!";
                     lblMsg.CssClass = "alert alert-success";
+
                     txtInsID.Text = string.Empty;
                     txtPolID.Text = string.Empty;
                     txtBenID.Text = string.Empty;
+                    BenefactorGridView.DataSource = null;                    ;
+                    BenefactorGridView.DataBind();
                 }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+
+        protected void btnGetBen_Click(object sender, EventArgs e)
+        {
+            //lblMsg.Text = string.Empty;
+            lblMsg.Visible = false;
+            try
+            {
+                int insID = Convert.ToInt32(txtInsID.Text.Trim());
+                DataTable dt = fn.Fetch("SELECT I_B.B_ID AS \"Benefactor ID\", B.B_Name AS \"Benefactor Name\", CONVERT(date, B.B_DOB) AS \"Date Of Birth\", I_B.Relationship AS \"Relationship with Insurer\" FROM INSURER_BENEFACTOR AS I_B, BENEFACTOR AS B WHERE INS_ID = " + insID + " AND I_B.B_ID = B.B_ID;");
+
+                BenefactorGridView.DataSource = dt;
+                BenefactorGridView.DataBind();
             }
             catch (Exception ex)
             {

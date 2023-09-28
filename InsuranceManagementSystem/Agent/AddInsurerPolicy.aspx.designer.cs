@@ -33,13 +33,22 @@ namespace InsuranceManagementSystem.Agent
         protected global::System.Web.UI.WebControls.TextBox txtInsID;
 
         /// <summary>
-        /// txtPolID control.
+        /// btnGetBen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPolID;
+        protected global::System.Web.UI.WebControls.Button btnGetBen;
+
+        /// <summary>
+        /// BenefactorGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView BenefactorGridView;
 
         /// <summary>
         /// txtBenID control.
@@ -49,6 +58,15 @@ namespace InsuranceManagementSystem.Agent
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBenID;
+
+        /// <summary>
+        /// txtPolID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPolID;
 
         /// <summary>
         /// Button1 control.

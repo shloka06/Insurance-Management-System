@@ -94,6 +94,9 @@
                             <ul class="accordion">
                                 <li><a href="../Agent/AddBenefactor.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Benefactor</a></li>
                             </ul>
+                            <ul class="accordion">
+                                <li><a href="../Agent/AddBenefactorPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1"></i>Add Policy for Benefactor</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">
