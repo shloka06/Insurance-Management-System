@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Agent\AddBenefactor.aspx" />
+    <Content Include="Agent\AddBenefactorPolicy.aspx" />
     <Content Include="Agent\AddInsurer.aspx" />
     <Content Include="Agent\AddInsurerPolicy.aspx" />
     <Content Include="Agent\AddPolicy.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="Agent\AddBenefactor.aspx.designer.cs">
       <DependentUpon>AddBenefactor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agent\AddBenefactorPolicy.aspx.cs">
+      <DependentUpon>AddBenefactorPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agent\AddBenefactorPolicy.aspx.designer.cs">
+      <DependentUpon>AddBenefactorPolicy.aspx</DependentUpon>
     </Compile>
     <Compile Include="Agent\AddInsurer.aspx.cs">
       <DependentUpon>AddInsurer.aspx</DependentUpon>

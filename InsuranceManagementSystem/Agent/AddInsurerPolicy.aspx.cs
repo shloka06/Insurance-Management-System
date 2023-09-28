@@ -98,7 +98,6 @@ namespace InsuranceManagementSystem.Agent
 
         protected void btnGetBen_Click(object sender, EventArgs e)
         {
-            //lblMsg.Text = string.Empty;
             lblMsg.Visible = false;
             try
             {

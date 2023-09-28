@@ -52,7 +52,6 @@ namespace InsuranceManagementSystem.Agent
                 BenefactorGridView.DataSource = dt3;
                 BenefactorGridView.DataBind();
 
-                //DataTable dt3 = fn.Fetch("SELECT P_P.POL_ID AS \"Policy ID\", P.Policy_Name AS \"Policy Name\", P.Policy_Type AS \"Policy Type\", P_P.Policy_Status AS \"Policy Status\", P_P.Start_Date AS \"Policy Purchase Date\", P_P.End_Date AS \"Policy Maturity Date\", P_P_B.B_ID AS \"Benefactor ID\" FROM PURCHASED_POLICY AS P_P, POLICY AS P, PURCHASED_POLICY_BENEFACTOR AS P_P_B WHERE P_P.INS_ID = " + insID + " AND P_P.POL_ID = P.POL_ID AND P_P_B.INS_ID = " + insID + " AND P_P_B.POL_ID = P_P.POL_ID;");
                 DataTable dt4 = fn.Fetch("SELECT P_P.POL_ID AS \"Policy ID\", P.Policy_Name AS \"Policy Name\", P.Policy_Type AS \"Policy Type\", P_P.Policy_Status AS \"Policy Status\", P_P.Start_Date AS \"Policy Purchase Date\", P_P.End_Date AS \"Policy Maturity Date\", P_P_B.B_ID AS \"Benefactor ID\" FROM PURCHASED_POLICY AS P_P INNER JOIN POLICY AS P ON P_P.INS_ID = " + insID + " AND P_P.POL_ID = P.POL_ID INNER JOIN PURCHASED_POLICY_BENEFACTOR AS P_P_B ON P_P_B.INS_ID = " + insID + " AND P_P_B.POL_ID = P_P.POL_ID;");
                 PolicyGridView.DataSource = dt4;
                 PolicyGridView.DataBind();
