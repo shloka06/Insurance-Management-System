@@ -4,7 +4,7 @@ using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.Agent
 {
-    public partial class ViewPaymentRequests : System.Web.UI.Page
+    public partial class ViewClaimRequests : System.Web.UI.Page
     {
         Commonfnx fn = new Commonfnx();
         protected void Page_Load(object sender, EventArgs e)
@@ -16,7 +16,7 @@ namespace InsuranceManagementSystem.Agent
         {
             try
             {
-                DataTable dt = fn.Fetch("SELECT P.PAY_ID AS \"Payment ID\", P.Amount AS \"Payment Amount\", P.Due_Date AS \"Due Date\", P.Date_Paid AS \"Date Paid\", P.Transaction_Status AS \"Transaction Status\", I.INS_ID AS \"Insurer ID\", I.Ins_Name AS \"Insurer Name\", POL.POL_ID AS \"Policy ID\", POL.Policy_Name AS \"Policy Name\" FROM PAYMENT_DETAILS AS P, PAYMENT_RECORD AS PR, INSURER AS I, POLICY AS POL WHERE P.Transaction_Status='Pending' AND P.PAY_ID = PR.PAY_ID AND PR.INS_ID = I.INS_ID AND PR.POL_ID = POL.POL_ID;");
+                DataTable dt = fn.Fetch("SELECT C.CLAIM_ID AS \"Claim ID\", C.Claim_Status AS \"Claim Status\", C_R.INS_ID AS \"Insurer ID\", I.Ins_Name AS \"Insurer Name\", C_R.B_ID AS \"Benefactor ID\", B.B_Name AS \"Benefactor Name\", C_R.POL_ID AS \"Policy ID\", P.Policy_Name AS \"Policy Name\", P.Insured_Amount AS \"Payout Amount\" FROM CLAIM AS C INNER JOIN CLAIM_RECORD AS C_R ON C.CLAIM_ID = C_R.CLAIM_ID INNER JOIN INSURER AS I ON C_R.INS_ID = I.INS_ID INNER JOIN BENEFACTOR AS B ON C_R.B_ID = B.B_ID INNER JOIN POLICY AS P ON C_R.POL_ID = P.POL_ID WHERE C.Claim_Status = 'Submitted' OR C.Claim_Status = 'Pending' OR C.Claim_Status = 'Under Review';");
 
                 if (dt.Rows.Count > 0)
                 {
@@ -25,7 +25,7 @@ namespace InsuranceManagementSystem.Agent
                 }
                 else
                 {
-                    lblMsg.Text = "No Pending Payment Records!";
+                    lblMsg.Text = "No Pending Claim Requests!";
                     lblMsg.CssClass = "alert alert-danger";
                 }
             }

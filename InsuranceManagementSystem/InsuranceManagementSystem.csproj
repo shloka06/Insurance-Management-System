@@ -74,11 +74,14 @@
     <Content Include="Agent\AddInsurerPolicy.aspx" />
     <Content Include="Agent\AddPolicy.aspx" />
     <Content Include="Agent\AgentHome.aspx" />
+    <Content Include="Agent\UpdateClaimStatus.aspx" />
     <Content Include="Agent\ApprovePaymentRequests.aspx" />
     <Content Include="Agent\DeletePolicy.aspx" />
     <Content Include="Agent\GetInsurerDetails.aspx" />
     <Content Include="Agent\ViewAllInsurers.aspx" />
     <Content Include="Agent\ViewAllPolicies.aspx" />
+    <Content Include="Agent\ViewClaimRequests.aspx" />
+    <Content Include="Agent\ViewClaimsHistory.aspx" />
     <Content Include="Agent\ViewPaymentHistory.aspx" />
     <Content Include="Agent\ViewPaymentRequests.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -257,6 +260,13 @@
     <Compile Include="Agent\AgentMst.Master.designer.cs">
       <DependentUpon>AgentMst.Master</DependentUpon>
     </Compile>
+    <Compile Include="Agent\UpdateClaimStatus.aspx.cs">
+      <DependentUpon>UpdateClaimStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agent\UpdateClaimStatus.aspx.designer.cs">
+      <DependentUpon>UpdateClaimStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Agent\ApprovePaymentRequests.aspx.cs">
       <DependentUpon>ApprovePaymentRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,6 +301,20 @@
     </Compile>
     <Compile Include="Agent\ViewAllPolicies.aspx.designer.cs">
       <DependentUpon>ViewAllPolicies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agent\ViewClaimRequests.aspx.cs">
+      <DependentUpon>ViewClaimRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agent\ViewClaimRequests.aspx.designer.cs">
+      <DependentUpon>ViewClaimRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agent\ViewClaimsHistory.aspx.cs">
+      <DependentUpon>ViewClaimsHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agent\ViewClaimsHistory.aspx.designer.cs">
+      <DependentUpon>ViewClaimsHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Agent\ViewPaymentHistory.aspx.cs">
       <DependentUpon>ViewPaymentHistory.aspx</DependentUpon>
