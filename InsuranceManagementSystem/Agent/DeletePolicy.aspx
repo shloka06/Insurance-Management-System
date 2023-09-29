@@ -12,14 +12,14 @@
 
         <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
             <div class="col-md-6">
-                <label for="txtPolicy" style="font-size: 20px; font-weight: 600">Policy Name: </label>
-                <asp:TextBox ID="txtPolicy" runat="server" CssClass="form-control" placeholder="Enter Name of Policy to be Deleted" required></asp:TextBox>
+                <label for="txtPolID" style="font-size: 20px; font-weight: 600">Policy ID: </label>
+                <asp:TextBox ID="txtPolID" runat="server" CssClass="form-control" placeholder="Enter ID of Policy to be Deleted" required></asp:TextBox>
             </div>
         </div>
 
         <div class="row mb-3 mr-lg-5 ml-lg-5">
             <div class="col-md-3 col-md-offset-2 mb-3">
-                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-block" BackColor="#5558C9" Text="Delete Policy" OnClick="btnDel_Click" />
+                <asp:Button ID="btnDel" runat="server" CssClass="btn btn-primary btn-block" BackColor="#5558C9" Text="Delete Policy" OnClick="btnDel_Click" />
             </div>
         </div>
 
