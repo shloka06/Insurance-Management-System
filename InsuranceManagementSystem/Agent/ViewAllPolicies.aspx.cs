@@ -21,15 +21,7 @@ namespace InsuranceManagementSystem.Agent
         {
             try
             {
-                DataTable dt = fn.Fetch("Select * from POLICY");
-                dt.Columns["POL_ID"].ColumnName = "Policy ID";
-                dt.Columns["Policy_Name"].ColumnName = "Policy Name";
-                dt.Columns["Policy_Type"].ColumnName = "Type";
-                dt.Columns["Insured_Amount"].ColumnName = "Insured Amount";
-                dt.Columns["Payment_Schedule"].ColumnName = "Payment Schedule";
-                dt.Columns["Payment_Amount"].ColumnName = "Payment Amount";
-                dt.Columns["Payment_Duration"].ColumnName = "Payment Duration";
-                dt.Columns["Cover_Duration"].ColumnName = "Cover Duration";
+                DataTable dt = fn.Fetch("SELECT POL_ID AS \"Policy ID\", Policy_Name AS \"Policy Name\", Policy_Type AS \"Type\", Insured_Amount AS \"Insured Amount\", Payment_Schedule AS \"Payment Schedule\", Payment_Amount AS \"Payment Amount\", Payment_Duration AS \"Payment Duration\", Cover_Duration AS \"Cover Duration\" from POLICY");
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
