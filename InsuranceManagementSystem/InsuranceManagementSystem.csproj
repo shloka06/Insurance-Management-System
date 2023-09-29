@@ -80,8 +80,8 @@
     <Content Include="Agent\GetInsurerDetails.aspx" />
     <Content Include="Agent\ViewAllInsurers.aspx" />
     <Content Include="Agent\ViewAllPolicies.aspx" />
-    <Content Include="Agent\ViewClaimRequests.aspx" />
-    <Content Include="Agent\ViewClaimsHistory.aspx" />
+    <Content Include="Agent\AddClaimRequest.aspx" />
+    <Content Include="Agent\ViewAllClaims.aspx" />
     <Content Include="Agent\ViewPaymentHistory.aspx" />
     <Content Include="Agent\ViewPaymentRequests.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -302,19 +302,19 @@
     <Compile Include="Agent\ViewAllPolicies.aspx.designer.cs">
       <DependentUpon>ViewAllPolicies.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Agent\ViewClaimRequests.aspx.cs">
-      <DependentUpon>ViewClaimRequests.aspx</DependentUpon>
+    <Compile Include="Agent\AddClaimRequest.aspx.cs">
+      <DependentUpon>AddClaimRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Agent\ViewClaimRequests.aspx.designer.cs">
-      <DependentUpon>ViewClaimRequests.aspx</DependentUpon>
+    <Compile Include="Agent\AddClaimRequest.aspx.designer.cs">
+      <DependentUpon>AddClaimRequest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Agent\ViewClaimsHistory.aspx.cs">
-      <DependentUpon>ViewClaimsHistory.aspx</DependentUpon>
+    <Compile Include="Agent\ViewAllClaims.aspx.cs">
+      <DependentUpon>ViewAllClaims.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Agent\ViewClaimsHistory.aspx.designer.cs">
-      <DependentUpon>ViewClaimsHistory.aspx</DependentUpon>
+    <Compile Include="Agent\ViewAllClaims.aspx.designer.cs">
+      <DependentUpon>ViewAllClaims.aspx</DependentUpon>
     </Compile>
     <Compile Include="Agent\ViewPaymentHistory.aspx.cs">
       <DependentUpon>ViewPaymentHistory.aspx</DependentUpon>

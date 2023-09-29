@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="background-image: url('../Images/bgimg.jpg'); width=100%; height: 1080px;
+    <div style="background-image: url('../Images/bgimg.jpg'); width=100%; height: 800px;
         background-repeat: repeat; background-size: cover; background-attachment: fixed">
         <div class="container p-md-4 p-sm-4">
             <div>
@@ -39,7 +39,7 @@
 
             <div class="row mb-3 mr-lg-5 ml-lg-5">
                 <div class="col-md-6">
-                    <label for="ClaimGridView" style="font-size: 20px; font-weight: 600">Benefactors:
+                    <label for="ClaimGridView" style="font-size: 20px; font-weight: 600">Claims:
                     </label>
                     <asp:GridView ID="ClaimGridView" runat="server" CssClass="table table-hover table-bordered">
                     </asp:GridView>

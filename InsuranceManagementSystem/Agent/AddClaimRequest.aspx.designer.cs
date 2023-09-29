@@ -11,7 +11,7 @@ namespace InsuranceManagementSystem.Agent
 {
 
 
-    public partial class AddBenefactorPolicy
+    public partial class ViewClaimRequests
     {
 
         /// <summary>
@@ -33,13 +33,22 @@ namespace InsuranceManagementSystem.Agent
         protected global::System.Web.UI.WebControls.TextBox txtBenID;
 
         /// <summary>
-        /// btnGetPol control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGetPol;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// btnGet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGet;
 
         /// <summary>
         /// PolicyGridView control.

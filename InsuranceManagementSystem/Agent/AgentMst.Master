@@ -117,9 +117,9 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewClaimRequests.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1"></i>View Pending Claims Requests</a></li>
+                                <li><a href="../Agent/ViewAllClaims.aspx" class="active"><i class="fas fa-receipt pr-1"></i>View All Claims</a></li>
+                                <li><a href="../Agent/AddClaimRequest.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1"></i>Add Claim Request</a></li>
                                 <li><a href="../Agent/UpdateClaimStatus.aspx" class="active"><i class="fas fa-solid fa-check pr-1"></i>Update Claim Status</a></li>
-                                <li><a href="../Agent/ViewClaimsHistory.aspx" class="active"><i class="fas fa-receipt pr-1"></i>View Claims History</a></li>
                             </ul>
                         </li>
                     </ul>
