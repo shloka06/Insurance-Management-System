@@ -202,6 +202,7 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="User\UserHome.aspx" />
     <Content Include="User\ViewPurchasedPolicies.aspx" />
+    <Content Include="User\ViewUpcomingPayments.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="User\ViewPurchasedPolicies.aspx.designer.cs">
       <DependentUpon>ViewPurchasedPolicies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ViewUpcomingPayments.aspx.cs">
+      <DependentUpon>ViewUpcomingPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ViewUpcomingPayments.aspx.designer.cs">
+      <DependentUpon>ViewUpcomingPayments.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
