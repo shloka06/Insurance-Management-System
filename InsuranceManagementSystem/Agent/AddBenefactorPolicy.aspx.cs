@@ -11,7 +11,10 @@ namespace InsuranceManagementSystem.Agent
         DataTable benefactorPolicyDT = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (CurrentSession.currentSession.SessionName != "Agent" || CurrentSession.currentSession.SessionID == 0)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
 
         protected void btnGetPol_Click(object sender, EventArgs e)

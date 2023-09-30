@@ -107,6 +107,8 @@
     <Content Include="Images\bgimg.jpg" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\logo1.png" />
+    <Content Include="Images\UserIcon.svg" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -332,8 +334,16 @@
     <Compile Include="Agent\ViewPaymentRequests.aspx.designer.cs">
       <DependentUpon>ViewPaymentRequests.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CurrentSession.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CommonFn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

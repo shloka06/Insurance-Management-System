@@ -44,10 +44,13 @@
 
                     <div class="profile_info">
                         <div class="profile_img">
-                            <img src="../Images/UserIcon.png" alt="profile_img">
+                            <img src="../Images/UserIcon.svg" alt="profile_img">
                         </div>
                         <div class="profile_data">
                             <p class="name">User Module</p>
+                        </div>
+                        <div class="profile_data">
+                            <p runat="server" id="userName"></p>
                         </div>
                     </div>
 
@@ -82,7 +85,7 @@
                         </li>
                     </ul>
                     <div class="logout_btn">
-                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false">Logout</asp:LinkButton>
+                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false" OnClick="btnLogOut_Click">Logout</asp:LinkButton>
                     </div>
 
                 </div>

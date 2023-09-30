@@ -14,7 +14,10 @@ namespace InsuranceManagementSystem.Agent
         Commonfnx fn = new Commonfnx();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (CurrentSession.currentSession.SessionName != "Agent" || CurrentSession.currentSession.SessionID == 0)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
         protected void btnAdd_Click(object sender, EventArgs e)
         {
