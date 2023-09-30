@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,60 +19,54 @@ namespace InsuranceManagementSystem.User
             {
                 Response.Redirect("../Login.aspx");
             }
-        }
 
-        protected void btnGetPayments_Click(object sender, EventArgs e)
-        {
             int insID = CurrentSession.currentSession.SessionID;
-            int polID = Convert.ToInt32(txtPolID.Text.Trim());
 
-            DataTable purchasedPolDT = fn.Fetch("SELECT * FROM PURCHASED_POLICY WHERE POL_ID = " + polID + " AND INS_ID = " + insID + ";");
+            DataTable paySchedDT = new DataTable();
+            paySchedDT.Columns.Add("Policy ID", typeof(int));
+            paySchedDT.Columns.Add("Policy Name", typeof(string));
+            paySchedDT.Columns.Add("Payment Amount", typeof(int));
+            paySchedDT.Columns.Add("Due Date", typeof(DateTime));
 
-            if (purchasedPolDT.Rows.Count == 0)
+            CultureInfo culture = new CultureInfo("en-IN");
+
+            DataTable purchasedPolDT = fn.Fetch("SELECT * FROM PURCHASED_POLICY WHERE INS_ID = " + insID + ";");
+
+            for (int polNo = 0; polNo < purchasedPolDT.Rows.Count; polNo++)
             {
-                lblMsg.Text = "You Have Not Purchased this Policy!";
-                lblMsg.CssClass = "alert alert-danger";
-                txtPolID.Text = string.Empty;
-            }
-            else
-            {
+                int polID = Convert.ToInt32(purchasedPolDT.Rows[polNo]["POL_ID"]);
+                string polStatus = purchasedPolDT.Rows[polNo]["Policy_Status"].ToString();
                 bool proceed = false;
-                
-                string polStatus = purchasedPolDT.Rows[0]["Policy_Status"].ToString();
+
                 switch (polStatus)
                 {
                     case "Ongoing":
                         proceed = true;
                         break;
-                    
+
                     case "Claim Submitted":
                         lblMsg.Text = "No Upcoming Payments - Claim has been Submitted for this Policy!";
                         lblMsg.CssClass = "alert alert-danger";
-                        txtPolID.Text = string.Empty;
                         break;
-                    
+
                     case "Expired":
                         lblMsg.Text = "This Policy has Expired!";
                         lblMsg.CssClass = "alert alert-danger";
-                        txtPolID.Text = string.Empty;
                         break;
-                    
+
                     case "Paid Out":
                         lblMsg.Text = "This Policy has been Paid Out!";
                         lblMsg.CssClass = "alert alert-danger";
-                        txtPolID.Text = string.Empty;
                         break;
-                    
+
                     case "Cancelled":
                         lblMsg.Text = "This Policy has been Cancelled!";
                         lblMsg.CssClass = "alert alert-danger";
-                        txtPolID.Text = string.Empty;
                         break;
 
                     default:
                         lblMsg.Text = "No Payment Record for this Policy!";
                         lblMsg.CssClass = "alert alert-danger";
-                        txtPolID.Text = string.Empty;
                         break;
                 }
 
@@ -87,6 +82,7 @@ namespace InsuranceManagementSystem.User
                 DateTime endDate = Convert.ToDateTime(policyDT.Rows[0]["End_Date"]);
                 int payAmt = Convert.ToInt32(policyDT.Rows[0]["Payment_Amount"]);
                 string paySchedule = policyDT.Rows[0]["Payment_Schedule"].ToString();
+                string polName = policyDT.Rows[0]["Policy_Name"].ToString();
                 int addMonths = 0, addYears = 0;
 
                 switch (paySchedule)
@@ -119,10 +115,6 @@ namespace InsuranceManagementSystem.User
                     }
                 }
 
-                DataTable paySchedDT = new DataTable();
-                paySchedDT.Columns.Add("Payment Amount", typeof(int));
-                paySchedDT.Columns.Add("Due Date", typeof(string));
-
 
                 int nextDay = startDay, nextMonth = startMonth, nextYear = startYear;
 
@@ -130,7 +122,9 @@ namespace InsuranceManagementSystem.User
                 {
                     if (nextYear < endYear)
                     {
-                        paySchedDT.Rows.Add(payAmt, startDay + "-" + nextMonth + "-" + nextYear);
+                        String sNextDate = startDay + "/" + nextMonth + "/" + nextYear;
+                        DateTime nextDate = Convert.ToDateTime(sNextDate, culture);
+                        paySchedDT.Rows.Add(polID, polName, payAmt, nextDate);
 
                         nextMonth = nextMonth + addMonths;
                         nextYear = nextYear + addYears;
@@ -146,11 +140,10 @@ namespace InsuranceManagementSystem.User
                         break;
                     }
                 }
-
-                PaymentsGridView.DataSource = paySchedDT;
-                PaymentsGridView.DataBind();
-
             }
+            paySchedDT.DefaultView.Sort = "Due Date ASC";
+            PaymentsGridView.DataSource = paySchedDT;
+            PaymentsGridView.DataBind();
         }
     }
 }
