@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.User
@@ -19,16 +14,19 @@ namespace InsuranceManagementSystem.User
             {
                 Response.Redirect("../Login.aspx");
             }
+            GetPaymentSchedule();
+        }
 
+        protected void GetPaymentSchedule()
+        {
             int insID = CurrentSession.currentSession.SessionID;
+            CultureInfo culture = new CultureInfo("en-IN");
 
             DataTable paySchedDT = new DataTable();
             paySchedDT.Columns.Add("Policy ID", typeof(int));
             paySchedDT.Columns.Add("Policy Name", typeof(string));
             paySchedDT.Columns.Add("Payment Amount", typeof(int));
             paySchedDT.Columns.Add("Due Date", typeof(DateTime));
-
-            CultureInfo culture = new CultureInfo("en-IN");
 
             DataTable purchasedPolDT = fn.Fetch("SELECT * FROM PURCHASED_POLICY WHERE INS_ID = " + insID + ";");
 
@@ -114,7 +112,6 @@ namespace InsuranceManagementSystem.User
                         startYear++;
                     }
                 }
-
 
                 int nextDay = startDay, nextMonth = startMonth, nextYear = startYear;
 

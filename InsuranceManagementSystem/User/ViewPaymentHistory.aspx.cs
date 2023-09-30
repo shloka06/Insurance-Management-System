@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.User
@@ -18,9 +13,11 @@ namespace InsuranceManagementSystem.User
             {
                 Response.Redirect("../Login.aspx");
             }
+
+            GetPaymentHistory();
         }
 
-        protected void btnView_Click(object sender, EventArgs e)
+        protected void GetPaymentHistory()
         {
             try
             {
