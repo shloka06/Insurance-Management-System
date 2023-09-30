@@ -201,6 +201,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="User\UserHome.aspx" />
+    <Content Include="User\ViewPaymentHistory.aspx" />
     <Content Include="User\ViewPurchasedPolicies.aspx" />
     <Content Include="User\ViewUpcomingPayments.aspx" />
     <Content Include="Web.config" />
@@ -361,6 +362,13 @@
     </Compile>
     <Compile Include="User\UserMst.Master.designer.cs">
       <DependentUpon>UserMst.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\ViewPaymentHistory.aspx.cs">
+      <DependentUpon>ViewPaymentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ViewPaymentHistory.aspx.designer.cs">
+      <DependentUpon>ViewPaymentHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\ViewPurchasedPolicies.aspx.cs">
       <DependentUpon>ViewPurchasedPolicies.aspx</DependentUpon>
