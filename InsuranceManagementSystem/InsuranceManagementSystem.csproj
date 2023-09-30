@@ -200,6 +200,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="User\AddPaymentRecord.aspx" />
     <Content Include="User\UserHome.aspx" />
     <Content Include="User\ViewPaymentHistory.aspx" />
     <Content Include="User\ViewPurchasedPolicies.aspx" />
@@ -349,6 +350,13 @@
     </Compile>
     <Compile Include="Models\CommonFn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\AddPaymentRecord.aspx.cs">
+      <DependentUpon>AddPaymentRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AddPaymentRecord.aspx.designer.cs">
+      <DependentUpon>AddPaymentRecord.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
