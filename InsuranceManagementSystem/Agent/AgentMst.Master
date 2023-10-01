@@ -134,7 +134,7 @@
                         <i class="fas fa-bars"></i>
                     </div>
                     <div class="logo">
-                        <a href="#">Guardian Life Insurance</a>
+                        <a style="font-family: 'Lucida Calligraphy'; text-decoration: none; font-weight: bold; font-size: 25px;"  href="#">Guardian Life Insurance</a>
                     </div>
                 </div>
 

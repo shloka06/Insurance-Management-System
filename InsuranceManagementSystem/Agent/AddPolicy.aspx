@@ -10,14 +10,14 @@
             </div>
             <h2 class="text-center"><b>ADD NEW POLICY</b></h2>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPolicy" style="font-size: 20px; font-weight: 600">Policy Name: </label>
                     <asp:TextBox ID="txtPolicy" runat="server" CssClass="form-control" placeholder="Enter Policy Name" required></asp:TextBox>
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label style="font-size: 20px; font-weight: 600">Policy Type: </label>
                     <div class="dropdown" data-toggle="dropdown">
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtInsuredAmt" style="font-size: 20px; font-weight: 600">Insured Amount: </label>
                     <asp:TextBox ID="txtInsuredAmt" runat="server" CssClass="form-control" placeholder="Enter Insured Amount" required></asp:TextBox>
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label style="font-size: 20px; font-weight: 600">Payment Schedule: </label>
                     <div class="dropdown" data-toggle="dropdown">
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPaymentAmount" style="font-size: 20px; font-weight: 600">Payment Amount: </label>
                     <asp:TextBox ID="txtPaymentAmount" runat="server" CssClass="form-control" placeholder="Enter Payment Amount" required></asp:TextBox>
@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPaymentDuration" style="font-size: 20px; font-weight: 600">Payment Duration [Years]: </label>
                     <asp:TextBox ID="txtPaymentDuration" runat="server" CssClass="form-control" placeholder="Enter Payment Duration in Years" required></asp:TextBox>
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtCoverDuration" style="font-size: 20px; font-weight: 600">Cover Duration [Years]: </label>
                     <asp:TextBox ID="txtCoverDuration" runat="server" CssClass="form-control" placeholder="Enter Cover Duration in Years" required></asp:TextBox>
@@ -100,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 text-center align-content-center justify-content-center">
                 <div class="col-md-3 col-md-offset-2 mb-3">
                     <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-block" BackColor="#5558C9" Text="Add Policy" OnClick="btnAdd_Click" />
                 </div>
