@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.User
@@ -38,7 +32,6 @@ namespace InsuranceManagementSystem.User
 
                 }
             }
-
         }
 
         protected void btnView_Click(object sender, EventArgs e)
@@ -55,7 +48,6 @@ namespace InsuranceManagementSystem.User
             CultureInfo culture = new CultureInfo("en-IN");
 
             DataTable purchasedPolDT = fn.Fetch("SELECT * FROM PURCHASED_POLICY WHERE INS_ID = " + insID + " AND POL_ID = " + polID + ";");
-
 
             string polStatus = purchasedPolDT.Rows[0]["Policy_Status"].ToString();
             bool proceed = false;
@@ -103,8 +95,26 @@ namespace InsuranceManagementSystem.User
             DateTime startDate = Convert.ToDateTime(policyDT.Rows[0]["Start_Date"]);
             DateTime endDate = Convert.ToDateTime(policyDT.Rows[0]["End_Date"]);
             int payAmt = Convert.ToInt32(policyDT.Rows[0]["Payment_Amount"]);
+            PaidAmount = payAmt;
+            string paySchedule = policyDT.Rows[0]["Payment_Schedule"].ToString();
             string polName = policyDT.Rows[0]["Policy_Name"].ToString();
+            int addMonths = 0, addYears = 0;
 
+            switch (paySchedule)
+            {
+                case "Monthly":
+                    addMonths = 1;
+                    break;
+                case "Quarterly":
+                    addMonths = 3;
+                    break;
+                case "Semi-Annual":
+                    addMonths = 6;
+                    break;
+                case "Annual":
+                    addYears = 1;
+                    break;
+            }
 
             int todayDay = today.Day;
             int startDay = startDate.Day, endDay = endDate.Day, startMonth = today.Month, endMonth = endDate.Month, startYear = today.Year, endYear = endDate.Year;
@@ -120,21 +130,48 @@ namespace InsuranceManagementSystem.User
                 }
             }
 
-
-            if (startYear < endYear)
+            int nextDay = startDay, nextMonth = startMonth, nextYear = startYear;
+            string sStartDay = startDay.ToString();
+            if (sStartDay.Length == 1)
             {
-                String sNextDate = startDay + "/" + startMonth + "/" + startYear;
-                DateTime nextDate = Convert.ToDateTime(sNextDate, culture);
-                DueDate = nextDate;
-                PaidAmount = payAmt;
-                paySchedDT.Rows.Add(polID, polName, payAmt, nextDate);
-            }
-            else
-            {
-                lblMsg.Text = "No Upcoming Payments or this Policy!";
-                lblMsg.CssClass = "alert alert-danger";
+                sStartDay = "0" + sStartDay;
             }
 
+            bool getNextDate = true;
+            while (getNextDate)
+            {
+                if (nextYear < endYear)
+                {
+                    string sNextDate = nextYear + "-" + nextMonth + "-" + sStartDay;
+
+                    DataTable paidDetailsDT = fn.Fetch("SELECT * FROM PAYMENT_DETAILS WHERE Due_Date = '" + sNextDate + "';");
+
+                    if (paidDetailsDT.Rows.Count == 0)
+                    {
+                        DateTime nextDate = Convert.ToDateTime(sNextDate, culture);
+                        paySchedDT.Rows.Add(polID, polName, payAmt, nextDate);
+                        DueDate = nextDate;
+                        getNextDate = false;
+                    }
+                    else
+                    {
+                        nextMonth = nextMonth + addMonths;
+                        nextYear = nextYear + addYears;
+
+                        if (nextMonth > 12)
+                        {
+                            nextMonth = nextMonth - 12;
+                            nextYear = nextYear + 1;
+                        }
+                    }
+
+                }
+                else
+                {
+                    lblMsg.Text = "No Upcoming Payments for this Policy!";
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+            }
             PaymentGrid.DataSource = paySchedDT;
             PaymentGrid.DataBind();
             btnPay.Visible = true;

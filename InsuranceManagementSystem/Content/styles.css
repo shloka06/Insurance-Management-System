@@ -1,5 +1,4 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Trade+Winds&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 
 * {
     margin: 0;
@@ -74,7 +73,7 @@ body {
         font-size: 18px;
         color: #fff;
         margin-bottom: 5px;
-        font-family: 'Slabo';
+        font-family: 'Trade Winds';
     }
 
     .sidebar_inner .profile_info .profile_data span {
@@ -168,9 +167,9 @@ body {
     }
 
     .navbar .logo a {
-        font-family: 'Slabo';
+        font-family: 'Trade Winds';
         color: #5558c9;
-        font-size: 40px;
+        font-size: 20px;
     }
 
 .content {

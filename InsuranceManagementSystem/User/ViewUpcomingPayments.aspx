@@ -9,7 +9,7 @@
         <div>
             <asp:Label ID="lblMsg" runat="server"></asp:Label>
         </div>
-        <h3 class="text-center">SCHEDULE FOR UPCOMING PAYMENTS</h3>
+        <h3 class="text-center fw-bold">SCHEDULE FOR UPCOMING PAYMENTS</h3>
 
         <div class="row mb-3 mr-lg-5 ml-lg-5 align-content-center justify-content-center">
             <div class="col-md-10 mt-3">
