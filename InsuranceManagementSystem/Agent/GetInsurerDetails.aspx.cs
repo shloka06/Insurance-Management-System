@@ -33,6 +33,9 @@ namespace InsuranceManagementSystem.Agent
                 txtDOB.Text = string.Empty;
                 txtAddr.Text = string.Empty;
 
+                PhoneNumGridView.DataSource = null;
+                PhoneNumGridView.DataBind();
+ 
                 BenefactorGridView.DataSource = null;
                 BenefactorGridView.DataBind();
 
@@ -51,7 +54,6 @@ namespace InsuranceManagementSystem.Agent
                 PhoneNumGridView.DataBind();
 
                 DataTable dt3 = fn.Fetch("SELECT I_B.B_ID AS \"Benefactor ID\", B.B_Name AS \"Benefactor Name\", CONVERT(date, B.B_DOB) AS \"Date Of Birth\", I_B.Relationship AS \"Relationship with Insurer\" FROM INSURER_BENEFACTOR AS I_B, BENEFACTOR AS B WHERE INS_ID = " + insID + " AND I_B.B_ID = B.B_ID;");
-                
                 BenefactorGridView.DataSource = dt3;
                 BenefactorGridView.DataBind();
 

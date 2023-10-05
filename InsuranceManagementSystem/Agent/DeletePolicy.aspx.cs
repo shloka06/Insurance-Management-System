@@ -34,10 +34,12 @@ namespace InsuranceManagementSystem.Agent
                 {
                     policyIDItems.Items.Add(purchasedPolIDs.Rows[polNo][0].ToString());
                 }
+                btnDel.Enabled = true;
             }
             else
             {
                 policyIDItems.Enabled = false;
+                btnDel.Enabled = false;
                 lblMsg.Text = "All Policies have Active Insurers - Nothing can be Deleted at the Moment!!";
                 lblMsg.CssClass = "alert alert-danger";
             }

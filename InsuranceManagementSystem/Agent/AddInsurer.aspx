@@ -11,7 +11,7 @@
             </div>
             <h2 class="text-center"><b>ADD NEW INSURER</b></h2>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtInsurerFName" style="font-size: 20px; font-weight: 600">
                         Insurer First
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtInsurerLName" style="font-size: 20px; font-weight: 600">
                         Insurer Last
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtInsurerDOB" style="font-size: 20px; font-weight: 600">
                         Date of Birth:
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPhNo1" style="font-size: 20px; font-weight: 600">
                         Primary Phone Number:
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPhNo2" style="font-size: 20px; font-weight: 600">
                         Alternate Phone Number
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPhNo3" style="font-size: 20px; font-weight: 600">
                         Alternate Phone Number
@@ -98,7 +98,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtHouseNum" style="font-size: 20px; font-weight: 600">
                         House Number:
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtStreet" style="font-size: 20px; font-weight: 600">
                         Street Name:
@@ -120,7 +120,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtArea" style="font-size: 20px; font-weight: 600">
                         Area:
@@ -131,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtCity" style="font-size: 20px; font-weight: 600">
                         City:
@@ -142,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtPincode" style="font-size: 20px; font-weight: 600">
                         Pincode: 
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtBenefactorFName" style="font-size: 20px; font-weight: 600">
                         Benefactor First Name:
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtBenefactorLName" style="font-size: 20px; font-weight: 600">
                         Benefactor Last Name:
@@ -181,7 +181,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label for="txtBenefactorDOB" style="font-size: 20px; font-weight: 600">
                         Date of Birth of Benefactor:
@@ -190,7 +190,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
                 <div class="col-md-6">
                     <label style="font-size: 20px; font-weight: 600">
                         Relationship of Benefactor with Insurer:
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3 mr-lg-5 ml-lg-5">
+            <div class="row mb-3 mr-lg-5 ml-lg-5 text-center align-content-center justify-content-center">
                 <div class="col-md-3 col-md-offset-2 mb-3">
                     <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-block" BackColor="#5558C9"
                         Text="Add Insurer" OnClick="btnAdd_Click" />
