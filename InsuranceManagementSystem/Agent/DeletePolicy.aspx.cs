@@ -18,37 +18,41 @@ namespace InsuranceManagementSystem.Agent
             {
                 Response.Redirect("../Login.aspx");
             }
+
+            populateDeletablePolicies();
+        }
+
+        protected void populateDeletablePolicies()
+        {
+            policyIDItems.Items.Clear();
+
+            DataTable purchasedPolIDs = fn.Fetch("SELECT POL_ID FROM POLICY WHERE POL_ID NOT IN (SELECT DISTINCT POL_ID FROM PURCHASED_POLICY);");
+
+            if (purchasedPolIDs.Rows.Count != 0)
+            {
+                for (int polNo = 0; polNo < purchasedPolIDs.Rows.Count; polNo++)
+                {
+                    policyIDItems.Items.Add(purchasedPolIDs.Rows[polNo][0].ToString());
+                }
+            }
+            else
+            {
+                policyIDItems.Enabled = false;
+                lblMsg.Text = "All Policies have Active Insurers - Nothing can be Deleted at the Moment!!";
+                lblMsg.CssClass = "alert alert-danger";
+            }
         }
 
         protected void btnDel_Click(object sender, EventArgs e)
         {
             try
             {
-                string polID = txtPolID.Text.Trim();
-                DataTable dt = fn.Fetch("Select * from POLICY where POL_ID ='" + polID + "' ");
-                if (dt.Rows.Count > 0)
-                {
-
-                    DataTable dt1 = fn.Fetch("Select * from PURCHASED_POLICY where POL_ID ='" + polID + "' AND Policy_Status IN ('Ongoing');");
-                    if (dt1.Rows.Count > 0)
-                    {
-                        lblMsg.Text = "This Policy has Active Insurers - Cannot be Deleted!";
-                        lblMsg.CssClass = "alert alert-danger";
-                    }
-                    else
-                    {
-                        string query = "DELETE FROM POLICY WHERE POL_ID ='" + polID + "'";
-                        fn.Query(query);
-                        lblMsg.Text = "Deleted Successfully!";
-                        lblMsg.CssClass = "alert alert-success";
-                        txtPolID.Text = string.Empty;
-                    }
-                }
-                else
-                {
-                    lblMsg.Text = "Policy With Entered Name Does Not Exist";
-                    lblMsg.CssClass = "alert alert-danger";
-                }
+                int polID = Convert.ToInt32(policyIDItems.SelectedValue);
+                string query = "DELETE FROM POLICY WHERE POL_ID ='" + polID + "'";
+                fn.Query(query);
+                populateDeletablePolicies();
+                lblMsg.Text = "Deleted Successfully!";
+                lblMsg.CssClass = "alert alert-success";
             }
             catch (Exception ex)
             {
