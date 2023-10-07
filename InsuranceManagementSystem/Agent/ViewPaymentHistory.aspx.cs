@@ -13,9 +13,11 @@ namespace InsuranceManagementSystem.Agent
             {
                 Response.Redirect("../Login.aspx");
             }
+
+            GetPaymentHistory();
         }
 
-        protected void btnView_Click(object sender, EventArgs e)
+        protected void GetPaymentHistory()
         {
             try
             {
