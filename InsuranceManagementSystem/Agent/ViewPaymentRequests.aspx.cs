@@ -13,9 +13,11 @@ namespace InsuranceManagementSystem.Agent
             {
                 Response.Redirect("../Login.aspx");
             }
+
+            GetPendingPayments();
         }
 
-        protected void btnView_Click(object sender, EventArgs e)
+        protected void GetPendingPayments()
         {
             try
             {
