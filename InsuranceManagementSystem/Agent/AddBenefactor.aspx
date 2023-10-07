@@ -9,16 +9,16 @@
         </div>
         <h2 class="text-center"><b>ADD NEW BENEFACTOR</b></h2>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
             <div class="col-md-6">
-                <label for="txtInsID" style="font-size: 20px; font-weight: 600">INSURER ID: </label>
+                <label for="txtInsID" style="font-size: 20px; font-weight: 600">Insurer ID: </label>
                 <asp:TextBox ID="txtInsID" runat="server" CssClass="form-control" placeholder="Enter Insurer ID"
                     required>
                 </asp:TextBox>
             </div>
         </div>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
             <div class="col-md-6">
                 <label for="txtBenefactorFName" style="font-size: 20px; font-weight: 600">
                     Benefactor First Name:
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
             <div class="col-md-6">
                 <label for="txtBenefactorLName" style="font-size: 20px; font-weight: 600">
                     Benefactor Last Name:
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
             <div class="col-md-6">
                 <label for="txtBenefactorDOB" style="font-size: 20px; font-weight: 600">
                     Date of Birth of Benefactor:
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5 align-content-center justify-content-center">
             <div class="col-md-6">
                 <label style="font-size: 20px; font-weight: 600">
                     Relationship of Benefactor with Insurer:
@@ -67,7 +67,7 @@
             </div>
         </div>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 text-center align-content-center justify-content-center">
             <div class="col-md-3 col-md-offset-2 mb-3">
                 <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-block" BackColor="#5558C9"
                     Text="Add Benefactor" OnClick="btnAdd_Click" />

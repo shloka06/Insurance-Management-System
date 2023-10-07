@@ -51,13 +51,13 @@ namespace InsuranceManagementSystem.Agent
         protected global::System.Web.UI.WebControls.GridView PolicyGridView;
 
         /// <summary>
-        /// txtPolID control.
+        /// polIDItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPolID;
+        protected global::System.Web.UI.WebControls.DropDownList polIDItems;
 
         /// <summary>
         /// btnAdd control.
