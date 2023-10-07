@@ -15,6 +15,7 @@ namespace InsuranceManagementSystem.Agent
             {
                 Response.Redirect("../Login.aspx");
             }
+            btnAdd.Enabled = false;
         }
 
         protected void btnGet_Click(object sender, EventArgs e)
@@ -26,7 +27,8 @@ namespace InsuranceManagementSystem.Agent
                 lblMsg.Visible = true;
                 lblMsg.Text = "No Record Exists for Entered Benefactor ID!";
                 lblMsg.CssClass = "alert alert-danger";
-                txtPolID.Text = string.Empty;
+                polIDItems.Items.Clear();
+                btnAdd.Enabled = false;
                 txtBenID.Text = string.Empty;
                 PolicyGridView.DataSource = null;
                 PolicyGridView.DataBind();
@@ -42,6 +44,13 @@ namespace InsuranceManagementSystem.Agent
 
                     if (benefactorPolicyDT.Rows.Count > 0)
                     {
+                        polIDItems.Items.Clear();
+                        for (int polNo = 0; polNo < benefactorPolicyDT.Rows.Count; polNo++)
+                        {
+                            polIDItems.Items.Add(benefactorPolicyDT.Rows[polNo][0].ToString());
+                        }
+
+                        btnAdd.Enabled = true;
                         PolicyGridView.DataSource = benefactorPolicyDT;
                         PolicyGridView.DataBind();
                     }
@@ -50,8 +59,9 @@ namespace InsuranceManagementSystem.Agent
                         lblMsg.Visible = true;
                         lblMsg.Text = "No Policies Available for Entered Benefactor!";
                         lblMsg.CssClass = "alert alert-danger";
-                        txtPolID.Text = string.Empty;
                         txtBenID.Text = string.Empty;
+                        polIDItems.Items.Clear();
+                        btnAdd.Enabled = false;
                         PolicyGridView.DataSource = null;
                         PolicyGridView.DataBind();
                     }
@@ -68,7 +78,7 @@ namespace InsuranceManagementSystem.Agent
         {
             try
             {
-                int polID = Convert.ToInt32(txtPolID.Text.Trim());
+                int polID = Convert.ToInt32(polIDItems.SelectedValue);
                 int benID = Convert.ToInt32(txtBenID.Text.Trim());
 
                 insIDDT = fn.Fetch("SELECT INS_ID FROM INSURER_BENEFACTOR WHERE B_ID = " + benID);
@@ -102,7 +112,8 @@ namespace InsuranceManagementSystem.Agent
                     lblMsg.Text = "Claim Successfully Added For Benefactor!";
                     lblMsg.CssClass = "alert alert-success";
 
-                    txtPolID.Text = string.Empty;
+                    polIDItems.Items.Clear();
+                    btnAdd.Enabled = false;
                     txtBenID.Text = string.Empty;
                     PolicyGridView.DataSource = null;
                     PolicyGridView.DataBind();
@@ -112,7 +123,8 @@ namespace InsuranceManagementSystem.Agent
                     lblMsg.Visible = true;
                     lblMsg.Text = "Claim Cannot be Added against Entered Policy!";
                     lblMsg.CssClass = "alert alert-danger";
-                    txtPolID.Text = string.Empty;
+                    btnAdd.Enabled = false;
+                    polIDItems.Items.Clear();
                     return;
                 }
             }
