@@ -19,7 +19,12 @@ namespace InsuranceManagementSystem.Agent
                 Response.Redirect("../Login.aspx");
             }
 
-            populateDeletablePolicies();
+            if (!Page.IsPostBack)
+            {
+
+                populateDeletablePolicies();
+
+            }
         }
 
         protected void populateDeletablePolicies()

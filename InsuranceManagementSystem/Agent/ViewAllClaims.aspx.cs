@@ -13,9 +13,10 @@ namespace InsuranceManagementSystem.Agent
             {
                 Response.Redirect("../Login.aspx");
             }
+            GetAllClaims();
         }
 
-        protected void btnView_Click(object sender, EventArgs e)
+        protected void GetAllClaims()
         {
             try
             {
