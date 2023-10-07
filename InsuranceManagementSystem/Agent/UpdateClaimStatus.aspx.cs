@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Web.UI.WebControls;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.Agent
@@ -13,13 +14,44 @@ namespace InsuranceManagementSystem.Agent
             {
                 Response.Redirect("../Login.aspx");
             }
+
+            if (!Page.IsPostBack)
+            {
+                GetClaimItems();
+            }
+        }
+
+        protected void GetClaimItems()
+        {
+            try
+            {
+                DataTable dt = fn.Fetch("SELECT C.CLAIM_ID AS \"Claim ID\", C.Claim_Status AS \"Claim Status\", C_R.INS_ID AS \"Insurer ID\", I.Ins_Name AS \"Insurer Name\", C_R.B_ID AS \"Benefactor ID\", B.B_Name AS \"Benefactor Name\", C_R.POL_ID AS \"Policy ID\", P.Policy_Name AS \"Policy Name\", P.Insured_Amount AS \"Payout Amount\" FROM CLAIM AS C INNER JOIN CLAIM_RECORD AS C_R ON C.CLAIM_ID = C_R.CLAIM_ID INNER JOIN INSURER AS I ON C_R.INS_ID = I.INS_ID INNER JOIN BENEFACTOR AS B ON C_R.B_ID = B.B_ID INNER JOIN POLICY AS P ON C_R.POL_ID = P.POL_ID;");
+
+                if (dt.Rows.Count > 0)
+                {
+                    claimIDItems.Items.Clear();
+                    for (int claimNo = 0; claimNo < dt.Rows.Count; claimNo++)
+                    {
+                        claimIDItems.Items.Add(dt.Rows[claimNo][0].ToString());
+                    }
+                }
+                else
+                {
+                    lblMsg.Text = "No Claims History Found!";
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                int claimID = Convert.ToInt32(txtClaimID.Text.Trim());
+                int claimID = Convert.ToInt32(claimIDItems.SelectedValue);
                 string updatedClaimStatus = Request.Form["claimStatusItems"];
 
                 DataTable dt = fn.Fetch("SELECT Claim_Status FROM CLAIM WHERE CLAIM_ID = " + claimID + ";");
@@ -40,7 +72,7 @@ namespace InsuranceManagementSystem.Agent
                     lblMsg.Text = "Updated Successfully!";
                     lblMsg.CssClass = "alert alert-success";
 
-                    txtClaimID.Text = string.Empty;
+                    GetClaimItems();
                     ClaimGridView.DataSource = null;
                     ClaimGridView.DataBind();
                 }
@@ -54,7 +86,7 @@ namespace InsuranceManagementSystem.Agent
         protected void btnGet_Click(object sender, EventArgs e)
         {
             lblMsg.Visible = false;
-            int claimID = Convert.ToInt32(txtClaimID.Text.Trim());
+            int claimID = Convert.ToInt32(claimIDItems.SelectedValue);
             DataTable dt = fn.Fetch("SELECT CLAIM_ID AS \"Claim ID\", Claim_Status AS \"Claim Status\" FROM CLAIM WHERE CLAIM_ID = " + claimID + ";");
             if (dt.Rows.Count > 0)
             {
