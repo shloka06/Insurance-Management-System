@@ -89,7 +89,7 @@ namespace InsuranceManagementSystem.User
                 return;
             }
 
-            DataTable policyDT = fn.Fetch("SELECT * FROM PURCHASED_POLICY AS P_P INNER JOIN POLICY AS P ON P_P.POL_ID = P.POL_ID WHERE P_P.POL_ID = " + polID + " AND P_P.INS_ID = " + insID + "; ");
+            DataTable policyDT = fn.Fetch("EXEC PurchasedPolicyDetailsForUser @polID = " + polID + ", @insID = " + insID + ";");
 
             DateTime today = DateTime.Now;
             DateTime startDate = Convert.ToDateTime(policyDT.Rows[0]["Start_Date"]);
