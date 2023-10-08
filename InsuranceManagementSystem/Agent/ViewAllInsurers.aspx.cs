@@ -20,7 +20,7 @@ namespace InsuranceManagementSystem.Agent
         {
             try
             {
-                DataTable dt = fn.Fetch("SELECT INS_ID AS \"Insurer ID\", Ins_Name AS \"Insurer Name\", TRY_CONVERT(date, DOB) AS \"Date Of Birth\", House_Num + ', ' + Street + ', ' + Area + ', ' + City + ' - ' + CONVERT(nchar, Pincode) as \"Address\" FROM INSURER;");
+                DataTable dt = fn.Fetch("SELECT * FROM InsurerList;");
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }

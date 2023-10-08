@@ -12,7 +12,7 @@
             <h3 class="text-center fw-bold">VIEW PENDING PAYMENT REQUESTS</h3>
 
             <div class="row mb-3 mr-lg-5 ml-lg-5 align-content-center justify-content-center">
-                <div class="col-md-9 mt-3">
+                <div class=" mt-3">
                     <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered">
                     </asp:GridView>
                 </div>
