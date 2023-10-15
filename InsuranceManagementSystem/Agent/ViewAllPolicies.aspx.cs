@@ -25,7 +25,7 @@ namespace InsuranceManagementSystem.Agent
         {
             try
             {
-                DataTable dt = fn.Fetch("SELECT POL_ID AS \"Policy ID\", Policy_Name AS \"Policy Name\", Policy_Type AS \"Type\", Insured_Amount AS \"Insured Amount\", Payment_Schedule AS \"Payment Schedule\", Payment_Amount AS \"Payment Amount\", Payment_Duration AS \"Payment Duration\", Cover_Duration AS \"Cover Duration\" from POLICY");
+                DataTable dt = fn.Fetch("SELECT * FROM PolicyList;");
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
