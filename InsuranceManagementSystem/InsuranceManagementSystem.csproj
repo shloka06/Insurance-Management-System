@@ -220,6 +220,7 @@
   <ItemGroup>
     <Compile Include="Agent Classes\Benefactor.cs" />
     <Compile Include="Agent Classes\Insurer.cs" />
+    <Compile Include="Agent Classes\Policy.cs" />
     <Compile Include="Agent\AddBenefactor.aspx.cs">
       <DependentUpon>AddBenefactor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
