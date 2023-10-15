@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.Agent
@@ -19,29 +14,33 @@ namespace InsuranceManagementSystem.Agent
                 Response.Redirect("../Login.aspx");
             }
         }
+
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
                 int insID = Convert.ToInt32(txtInsID.Text.Trim());
-                DataTable dt = fn.Fetch("Select * from INSURER where INS_ID = " + insID + ";");
+                DataTable dt = fn.Fetch("SELECT * FROM INSURER WHERE INS_ID = " + insID + ";");
                 if (dt.Rows.Count != 0)
                 {
-                    DataTable dt1 = fn.Fetch("Select * from INSURER_BENEFACTOR where INS_ID = " + insID + ";");
+                    DataTable dt1 = fn.Fetch("SELECT * FROM INSURER_BENEFACTOR WHERE INS_ID = " + insID + ";");
                     if (dt1.Rows.Count < 5)
                     {
                         string benFName = txtBenefactorFName.Text.Trim();
                         string benLName = txtBenefactorLName.Text.Trim();
                         string benName = benFName + " " + benLName;
+
                         DateTime benDOB = Convert.ToDateTime(Request["txtBenefactorDOB"]);
                         int benDay = benDOB.Date.Day;
                         int benMonth = benDOB.Date.Month;
                         int benYear = benDOB.Date.Year;
                         string benDOBStr = benYear.ToString() + "-" + benMonth.ToString() + "-" + benDay.ToString();
+
                         string reln = Request.Form["relationshipItems"];
 
                         string insertBenefactorQuery = "INSERT INTO BENEFACTOR VALUES ('" + benName + "', '" + benDOBStr + "');";
                         fn.Query(insertBenefactorQuery);
+
                         string getBenefactorIDQuery = "SELECT B_ID FROM BENEFACTOR WHERE B_Name = '" + benName + "';";
                         int benID = fn.Fetch(getBenefactorIDQuery).Rows[0].Field<int>(0);
 

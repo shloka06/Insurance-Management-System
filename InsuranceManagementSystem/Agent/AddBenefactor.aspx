@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Agent/AgentMst.Master" AutoEventWireup="true" CodeBehind="AddBenefactor.aspx.cs" Inherits="InsuranceManagementSystem.Agent.AddBenefactor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Agent/AgentMst.Master" AutoEventWireup="true"
+    CodeBehind="AddBenefactor.aspx.cs" Inherits="InsuranceManagementSystem.Agent.AddBenefactor" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -75,6 +77,5 @@
         </div>
 
     </div>
-</div>
 
 </asp:Content>
