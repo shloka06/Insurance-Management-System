@@ -10,7 +10,7 @@ namespace InsuranceManagementSystem.Agent
     {
         Commonfnx fn = new Commonfnx();
         Policy policy = new Policy();
-        int PolID = 0;
+        string PolName = String.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,11 +32,11 @@ namespace InsuranceManagementSystem.Agent
             return policy;
         }
 
-        public bool DoesPolicyExist(int polID)
+        public bool DoesPolicyExist(string polName)
         {
             try
             {
-                DataTable dt = fn.Fetch("SELECT * FROM POLICY WHERE Policy_Name='" + polID + "' ");
+                DataTable dt = fn.Fetch("SELECT * FROM POLICY WHERE Policy_Name='" + polName + "' ");
                 if (dt.Rows.Count == 0)
                     return false;
                 return true;
@@ -74,8 +74,8 @@ namespace InsuranceManagementSystem.Agent
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            PolID = Convert.ToInt32(txtPolicy.Text.Trim());
-            bool policyFound = DoesPolicyExist(PolID);
+            PolName = txtPolicy.Text.Trim();
+            bool policyFound = DoesPolicyExist(PolName);
             bool polSuccess = false;
 
             if (!policyFound)
