@@ -46,7 +46,7 @@
                         <div class="profile_img">
                             <img src="../Images/UserIcon.svg" alt="profile_img">
                         </div>
-                        <div class="profile_data">
+                        <div class="profile_data" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px">
                             <p class="name" runat="server" id="userName"></p>
                         </div>
                     </div>

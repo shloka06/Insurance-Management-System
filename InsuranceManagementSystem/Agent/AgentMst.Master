@@ -48,7 +48,7 @@
                             <img src="../Images/AgentIcon.png" alt="profile_img">
                         </div>
                         <div class="profile_data">
-                            <p class="name">Agent Module</p>
+                            <p class="name" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px">Agent Module</p>
                         </div>
                     </div>
 
