@@ -23,7 +23,7 @@ namespace InsuranceManagementSystem.User
             {
                 int insID = CurrentSession.currentSession.SessionID;
 
-                DataTable dt = fn.Fetch("EXEC PaymentHistoryForUser @insID = " + insID + ";");
+                DataTable dt = fn.Fetch("DECLARE @result int; EXEC PaymentHistoryForUser @insID = " + insID + ", @count = @result OUTPUT;");
 
                 if (dt.Rows.Count > 0)
                 {

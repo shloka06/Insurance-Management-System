@@ -19,7 +19,7 @@ namespace InsuranceManagementSystem.User
         protected void GetPurchasedPolicies()
         {
             int insID = CurrentSession.currentSession.SessionID;
-            string getPoliciesQuery = "EXEC PurchasedPoliciesForUser @insID = " + insID + ";";
+            string getPoliciesQuery = "DECLARE @result int; EXEC PurchasedPoliciesForUser @insID = " + insID + ", @count = @result OUTPUT;";
 
             DataTable policyData = fn.Fetch(getPoliciesQuery);
 
