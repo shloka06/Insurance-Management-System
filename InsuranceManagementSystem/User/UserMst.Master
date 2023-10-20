@@ -46,8 +46,8 @@
                         <div class="profile_img">
                             <img src="../Images/UserIcon.svg" alt="profile_img">
                         </div>
-                        <div class="profile_data" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px">
-                            <p class="name" runat="server" id="userName"></p>
+                        <div class="profile_data">
+                            <p class="name" runat="server" id="userName" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px"></p>
                         </div>
                     </div>
 
@@ -75,8 +75,8 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../User/AddPaymentRecord.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1"></i>Add  Payment Record</a></li>
                                 <li><a href="../User/ViewUpcomingPayments.aspx" class="active"><i class="fas fa-solid fa-money-bill-wave pr-1"></i>View Upcoming Payment Schedule</a></li>
+                                <li><a href="../User/AddPaymentRecord.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1"></i>Add  Payment Record</a></li>
                                 <li><a href="../User/ViewPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1"></i>View Payment History</a></li>
                             </ul>
                         </li>
