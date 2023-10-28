@@ -117,7 +117,7 @@ namespace InsuranceManagementSystem.User
             }
 
             int todayDay = today.Day;
-            int startDay = startDate.Day, endDay = endDate.Day, startMonth = today.Month, endMonth = endDate.Month, startYear = today.Year, endYear = endDate.Year;
+            int startDay = startDate.Day, startMonth = today.Month, startYear = today.Year, endYear = endDate.Year;
 
             if (todayDay > startDay)
             {
@@ -130,7 +130,7 @@ namespace InsuranceManagementSystem.User
                 }
             }
 
-            int nextDay = startDay, nextMonth = startMonth, nextYear = startYear;
+            int nextMonth = startMonth, nextYear = startYear;
             string sStartDay = startDay.ToString();
             if (sStartDay.Length == 1)
             {

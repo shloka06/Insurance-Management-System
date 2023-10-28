@@ -1,5 +1,4 @@
-﻿using InsuranceManagementSystem.Agent_Classes;
-using System;
+﻿using System;
 using System.Data;
 using static InsuranceManagementSystem.Models.CommonFn;
 
@@ -8,7 +7,6 @@ namespace InsuranceManagementSystem.Agent
     public partial class GetInsurerDetails : System.Web.UI.Page
     {
         Commonfnx fn = new Commonfnx();
-        Insurer insurer = new Insurer();
         public int InsID = 0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -99,7 +97,7 @@ namespace InsuranceManagementSystem.Agent
             }
 
             bool insSuccess = GetInsDetails(InsID);
-            if(!insSuccess)
+            if (!insSuccess)
             {
                 ClearForm();
                 return;

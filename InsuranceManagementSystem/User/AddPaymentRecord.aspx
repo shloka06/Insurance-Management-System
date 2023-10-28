@@ -25,7 +25,8 @@
             </div>
         </div>
 
-        <div class="row mb-3 mr-lg-5 ml-lg-5 text-center align-content-center justify-content-center" Width="100%">
+        <div class="row mb-3 mr-lg-5 ml-lg-5 text-center align-content-center justify-content-center"
+            width="100%">
             <div class="col-md-6">
                 <asp:GridView ID="PaymentGrid" runat="server" CssClass="table table-hover table-bordered">
                 </asp:GridView>
@@ -39,7 +40,6 @@
             </div>
         </div>
 
-    </div>
     </div>
 
 </asp:Content>

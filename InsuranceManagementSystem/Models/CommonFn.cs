@@ -1,7 +1,6 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.DynamicData;
 
 namespace InsuranceManagementSystem.Models
 {

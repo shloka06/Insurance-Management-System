@@ -1,9 +1,6 @@
 ﻿using InsuranceManagementSystem.Agent_Classes;
-using InsuranceManagementSystem.User;
 using System;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.Agent

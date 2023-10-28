@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Web.UI.WebControls;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.Agent
@@ -56,7 +55,7 @@ namespace InsuranceManagementSystem.Agent
 
                 DataTable dt = fn.Fetch("SELECT Claim_Status FROM CLAIM WHERE CLAIM_ID = " + claimID + ";");
                 string oldClaimStatus = dt.Rows[0].Field<string>(0);
-                
+
                 if (oldClaimStatus == updatedClaimStatus)
                 {
                     lblMsg.Visible = true;

@@ -7,35 +7,35 @@
     <title>Insurance Management System</title>
     <meta charset="UTF-8">
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/6eddbb9610.js" crossorigin="anonymous"></script>
-        <link href="../Content/styles.css" rel="stylesheet" />
-    
+    <script src="https://kit.fontawesome.com/6eddbb9610.js" crossorigin="anonymous"></script>
+    <link href="../Content/styles.css" rel="stylesheet" />
+
     <script src="../Scripts/jquery-3.7.0.min.js"></script>
     <script src="../Scripts/popper.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                $(".siderbar_menu li").click(function () {
-                    $(".siderbar_menu li").removeClass("active");
-                    $(this).addClass("active");
-                });
-
-                $(".hamburger").click(function () {
-                    $(".wrapper").addClass("active");
-                });
-
-                $(".close, .bg_shadow").click(function () {
-                    $(".wrapper").removeClass("active");
-                });
+    <script>
+        $(document).ready(function () {
+            $(".siderbar_menu li").click(function () {
+                $(".siderbar_menu li").removeClass("active");
+                $(this).addClass("active");
             });
-        </script>
+
+            $(".hamburger").click(function () {
+                $(".wrapper").addClass("active");
+            });
+
+            $(".close, .bg_shadow").click(function () {
+                $(".wrapper").removeClass("active");
+            });
+        });
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-         <div class="wrapper">
+        <div class="wrapper">
             <div class="sidebar">
                 <div class="bg_shadow"></div>
                 <div class="sidebar_inner">
@@ -48,7 +48,8 @@
                             <img src="../Images/AgentIcon.png" alt="profile_img">
                         </div>
                         <div class="profile_data">
-                            <p class="name" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px">Agent Module</p>
+                            <p class="name" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px">
+                                Agent Module</p>
                         </div>
                     </div>
 
@@ -66,9 +67,12 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewAllPolicies.aspx" class="active"><i class="fas fa-solid fa-list pr-1"></i></i>View All Policies</a></li>
-                                <li><a href="../Agent/AddPolicy.aspx" class="active"><i class="fas fa-plus pr-1"></i>Add Policy</a></li>
-                                <li><a href="../Agent/DeletePolicy.aspx" class="active"><i class="fas fa-minus fa-xmark pr-1"></i>Delete Policy</a></li>
+                                <li><a href="../Agent/ViewAllPolicies.aspx" class="active"><i class="fas fa-solid fa-list pr-1">
+                                </i></i>View All Policies</a></li>
+                                <li><a href="../Agent/AddPolicy.aspx" class="active"><i class="fas fa-plus pr-1"></i>
+                                    Add Policy</a></li>
+                                <li><a href="../Agent/DeletePolicy.aspx" class="active"><i class="fas fa-minus fa-xmark pr-1">
+                                </i>Delete Policy</a></li>
                             </ul>
                         </li>
                         <li>
@@ -78,10 +82,14 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewAllInsurers.aspx" class="active"><i class="fas fa-solid fa-user-group pr-1"></i></i>View All Insurers</a></li>
-                                <li><a href="../Agent/GetInsurerDetails.aspx" class="active"><i class="fas fa-solid fa-user pr-1"></i></i>Get Insurer Details</a></li>
-                                <li><a href="../Agent/AddInsurer.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Insurer</a></li>
-                                <li><a href="../Agent/AddInsurerPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1"></i>Add Policy for Insurer</a></li>
+                                <li><a href="../Agent/ViewAllInsurers.aspx" class="active"><i class="fas fa-solid fa-user-group pr-1">
+                                </i></i>View All Insurers</a></li>
+                                <li><a href="../Agent/GetInsurerDetails.aspx" class="active"><i class="fas fa-solid fa-user pr-1">
+                                </i></i>Get Insurer Details</a></li>
+                                <li><a href="../Agent/AddInsurer.aspx" class="active"><i class="fas fa-user-plus pr-1">
+                                </i>Add Insurer</a></li>
+                                <li><a href="../Agent/AddInsurerPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1">
+                                </i>Add Policy for Insurer</a></li>
                             </ul>
                         </li>
                         <li>
@@ -91,10 +99,12 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/AddBenefactor.aspx" class="active"><i class="fas fa-person-circle-plus pr-1"></i>Add Benefactor</a></li>
+                                <li><a href="../Agent/AddBenefactor.aspx" class="active"><i class="fas fa-person-circle-plus pr-1">
+                                </i>Add Benefactor</a></li>
                             </ul>
                             <ul class="accordion">
-                                <li><a href="../Agent/AddBenefactorPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1"></i>Add Policy for Benefactor</a></li>
+                                <li><a href="../Agent/AddBenefactorPolicy.aspx" class="active"><i class="fas fa-hand-holding-heart pr-1">
+                                </i>Add Policy for Benefactor</a></li>
                             </ul>
                         </li>
                         <li>
@@ -104,9 +114,12 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewPaymentRequests.aspx" class="active"><i class="fas fa-solid fa-money-bill-wave pr-1"></i>View Pending Payment Requests</a></li>
-                                <li><a href="../Agent/ApprovePaymentRequests.aspx" class="active"><i class="fas fa-solid fa-check pr-1"></i>Approve Pending Payment Requests</a></li>
-                                <li><a href="../Agent/ViewPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1"></i>View Payment History</a></li>
+                                <li><a href="../Agent/ViewPaymentRequests.aspx" class="active"><i class="fas fa-solid fa-money-bill-wave pr-1">
+                                </i>View Pending Payment Requests</a></li>
+                                <li><a href="../Agent/ApprovePaymentRequests.aspx" class="active"><i class="fas fa-solid fa-check pr-1">
+                                </i>Approve Pending Payment Requests</a></li>
+                                <li><a href="../Agent/ViewPaymentHistory.aspx" class="active"><i class="fas fa-solid fa-receipt pr-1">
+                                </i>View Payment History</a></li>
                             </ul>
                         </li>
                         <li>
@@ -116,9 +129,12 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Agent/ViewAllClaims.aspx" class="active"><i class="fas fa-receipt pr-1"></i>View All Claims</a></li>
-                                <li><a href="../Agent/AddClaimRequest.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1"></i>Add Claim Request</a></li>
-                                <li><a href="../Agent/UpdateClaimStatus.aspx" class="active"><i class="fas fa-solid fa-check pr-1"></i>Update Claim Status</a></li>
+                                <li><a href="../Agent/ViewAllClaims.aspx" class="active"><i class="fas fa-receipt pr-1">
+                                </i>View All Claims</a></li>
+                                <li><a href="../Agent/AddClaimRequest.aspx" class="active"><i class="fas fa-solid fa-indian-rupee-sign pr-1">
+                                </i>Add Claim Request</a></li>
+                                <li><a href="../Agent/UpdateClaimStatus.aspx" class="active"><i class="fas fa-solid fa-check pr-1">
+                                </i>Update Claim Status</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -134,7 +150,8 @@
                         <i class="fas fa-bars"></i>
                     </div>
                     <div class="logo">
-                        <a style="font-family: 'Lucida Calligraphy'; text-decoration: none; font-weight: bold; font-size: 25px;"  href="#">Guardian Life Insurance</a>
+                        <a style="font-family: 'Lucida Calligraphy'; text-decoration: none; font-weight: bold;
+                            font-size: 25px;" href="#">Guardian Life Insurance</a>
                     </div>
                 </div>
 

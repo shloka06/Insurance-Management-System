@@ -100,7 +100,7 @@ namespace InsuranceManagementSystem.User
                 }
 
                 int todayDay = today.Day;
-                int startDay = startDate.Day, endDay = endDate.Day, startMonth = today.Month, endMonth = endDate.Month, startYear = today.Year, endYear = endDate.Year;
+                int startDay = startDate.Day, startMonth = today.Month, startYear = today.Year, endYear = endDate.Year;
 
                 if (todayDay > startDay)
                 {
@@ -113,13 +113,13 @@ namespace InsuranceManagementSystem.User
                     }
                 }
 
-                int nextDay = startDay, nextMonth = startMonth, nextYear = startYear;
+                int nextMonth = startMonth, nextYear = startYear;
 
                 for (int i = 0; i < 10; i++)
                 {
                     if (nextYear < endYear)
                     {
-                        String sNextDate = startDay + "/" + nextMonth + "/" + nextYear;
+                        string sNextDate = startDay + "/" + nextMonth + "/" + nextYear;
                         DateTime nextDate = Convert.ToDateTime(sNextDate, culture);
                         paySchedDT.Rows.Add(polID, polName, payAmt, nextDate);
 

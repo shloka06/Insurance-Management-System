@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Xml.Linq;
 using static InsuranceManagementSystem.Models.CommonFn;
 
 namespace InsuranceManagementSystem.Agent

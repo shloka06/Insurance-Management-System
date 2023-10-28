@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using static System.Collections.Specialized.BitVector32;
+﻿using System.Web;
 
 namespace InsuranceManagementSystem
 {
@@ -40,6 +36,6 @@ namespace InsuranceManagementSystem
         {
             HttpContext.Current.Session.Abandon();
         }
-        
+
     }
 }

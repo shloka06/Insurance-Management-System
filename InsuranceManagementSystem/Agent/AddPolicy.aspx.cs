@@ -95,7 +95,7 @@ namespace InsuranceManagementSystem.Agent
                 lblMsg.Text = "Inserted Successfully!";
                 lblMsg.CssClass = "alert alert-success";
                 ClearForm();
-            }  
+            }
         }
     }
 }
